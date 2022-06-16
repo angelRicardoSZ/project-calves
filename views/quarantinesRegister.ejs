@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar cuarentena</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Agregar cuarentena</h1>
+    <section class="formulario">
+        <form action="/quarantines/add" method="POST">
+            <label for="calves_id">ID de la cria a poner en cuarentena </label>
+            <p><input type="number" name="calves_id" required> </p>
+            
+            <label for="diets_id">ID de la dieta a emplear </label>
+            <p><input type="number" name="diets_id" required></p>
+        
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+            <a  class="botonVolver" href="/quarantines">Listado de dietas</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

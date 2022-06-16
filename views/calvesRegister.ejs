@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar cría</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Agregar cría</h1>
+    <section class="formulario">
+        <form action="/calves/add" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name"  required></p>
+            
+            <label for="weight">Peso </label>
+            <p><input type="number" name="weight" required> </p>
+            
+            <label for="color">Color </label>
+            <p><input type="number" name="color" required></p>
+           
+            <label for="marmoleo">Marmoleo </label>
+            <p><input type="number" name="marmoleo"  required></p>
+
+            <label for="price">Precio </label>
+            <p><input type="number" name="price"  required></p>
+
+            <label for="supplier_id">Proveedor </label>
+            <p><input type="number" name="supplier_id"  required></p>
+            
+            <label for="description">Descripcion </label>
+            <p><input type="text" name="description"  required></p>
+
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+            <a  class="botonVolver" href="/calves">Listado de crias</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

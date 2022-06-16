@@ -216,3 +216,20 @@ VALUES
 13,
 6,
 "No sale a caminar");
+
+
+
+/*
+    quarantine
+*/
+
+INSERT INTO `calves_db`.`quarantines`
+(
+`status`,
+`calves_id`,
+`diets_id`)
+VALUES
+(
+1,
+6,
+1);

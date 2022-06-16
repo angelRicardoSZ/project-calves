@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar cuarentena</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Editar cuarentena</h1>
+    <section class="formulario">
+        <form action="/quarantines/edit/<%=quarantine.id%>" method="POST">
+            <label for="calves_id">ID de la cria a poner en cuarentena </label>
+            <p><input type="text" name="calves_id" value="<%=quarantine.calves_id%>" required> </p>
+            
+            <label for="diets_id">ID de la dieta a emplear </label>
+            <p><input type="text" name="diets_id"  value="<%=quarantine.diets_id%>" required></p>
+           
+            <p> <button class="botonAgregar" type="submit">Actualizar</button>
+            
+            <a  class="botonVolver" href="/diets">Listado de dietas</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

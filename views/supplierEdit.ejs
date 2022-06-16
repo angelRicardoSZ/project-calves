@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar cría</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Editar datos de proveedor</h1>
+    <section class="formulario">
+        <form action="/suppliers/edit/<%=supplier.id%>" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name"  value="<%=supplier.name%>" required></p>
+            
+            <p> <button class="botonAgregar" type="submit">Editar</button>
+            
+            <a  class="botonVolver" href="/suppliers">Listado de proveedores</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<html>
+    <body>
+        <h1><%=supplier.name%></h1>
+        <form action="/suppliers/delete/<%=supplier.id%>?_method=PUT" method="POST"></form>
+            <button type="submit">DELETE</button>
+            <a  class="botonVolver" href="/suppliers">Listado de proveedores</a></p>
+    </body>
+</html>

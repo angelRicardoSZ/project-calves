@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% for( let i = 0; i < quarantines.length; i++ ) { %>
+      <li>
+        <a href="/quarantines/detail/<%=quarantines[i].id%>"><%= quarantines[i].id %></a>
+
+      </li>
+    <% } %>
+  </body>
+</html>

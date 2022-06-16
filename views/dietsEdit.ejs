@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar dieta</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Editar dieta</h1>
+    <section class="formulario">
+        <form action="/diets/edit/<%=diet.id%>" method="POST">
+            <label for="breakfast">Desayuno </label>
+            <p><input type="text" name="breakfast" value="<%=diet.breakfast%>" required> </p>
+            
+            <label for="eat">Comida </label>
+            <p><input type="text" name="eat"  value="<%=diet.eat%>" required></p>
+           
+            <label for="dinner">Cena </label>
+            <p><input type="text" name="dinner"  value="<%=diet.dinner%>" required></p>
+
+            <p> <button class="botonAgregar" type="submit">Actualizar</button>
+            
+            <a  class="botonVolver" href="/diets">Listado de dietas</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

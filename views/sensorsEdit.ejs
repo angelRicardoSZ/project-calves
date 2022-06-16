@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar sensor</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Editar datos de lectura con ID: <%=sensor.id%></h1>
+    <section class="formulario">
+        <form action="/sensors/edit/<%=sensor.id%>" method="POST">
+            <label for="temperature">Temperatura </label>
+            <p><input type="number" name="temperature"  value="<%=sensor.temperature%>" required></p>
+            
+            <label for="respiratory_frequency">Frecuencia respiratoria </label>
+            <p><input type="number" name="respiratory_frequency" value="<%=sensor.respiratory_frequency%>" required> </p>
+            
+            <label for="blood_frequency">Frecuencia sanguinea </label>
+            <p><input type="number" name="blood_frequency" value="<%=sensor.blood_frequency%>" required></p>
+           
+            <label for="heart_rate">Frecuencia cardiaca </label>
+            <p><input type="number" name="heart_rate" value="<%=sensor.heart_rate%>" required></p>
+
+            <label for="calves_id">ID cría </label>
+            <p><input type="number" name="calves_id"   value="<%=sensor.calves_id%>" required></p>
+
+            <p> <button class="botonAgregar" type="submit">Editar</button>
+            
+            <a  class="botonVolver" href="/sensors">Listado de lecturas de sensor</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

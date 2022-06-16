@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar datos de sensor</title>
+    
+</head>
+
+<body>
+
+    <h1 class="titulo">Agregar datos de sensor</h1>
+    <section class="formulario">
+        <form action="/sensors/add" method="POST">
+            <label for="temperature">Temperatura </label>
+            <p><input type="number" name="temperature"  required></p>
+            
+            <label for="respiratory_frequency">Frecuencia respiratoria </label>
+            <p><input type="number" name="respiratory_frequency" required> </p>
+            
+            <label for="blood_frequency">Frecuencia sanguinea </label>
+            <p><input type="number" name="blood_frequency" required></p>
+           
+            <label for="heart_rate">Frecuencia cardiaca </label>
+            <p><input type="number" name="heart_rate"  required></p>
+
+            <label for="calves_id">ID Cria </label>
+            <p><input type="number" name="calves_id"  required></p>
+
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+            <a  class="botonVolver" href="/sensor">Listado de datos de sensores</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

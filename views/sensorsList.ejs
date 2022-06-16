@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% for( let i = 0; i < sensors.length; i++ ) { %>
+      <li>
+        <a href="/sensors/detail/<%=sensors[i].id%>"><%= sensors[i].id %></a>
+
+     
+      </li>
+    <% } %>
+  </body>
+</html>

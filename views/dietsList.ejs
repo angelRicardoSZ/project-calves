@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <% for( let i = 0; i < diets.length; i++ ) { %>
+            <li>
+                <a href="/diets/detail/<%=diets[i].id%>"><%= diets[i].id %></a>
+            </li>
+        <% } %>
+    </body>
+</html>
