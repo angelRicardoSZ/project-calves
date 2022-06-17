@@ -5,7 +5,7 @@ let dietsController = {
     list: function(req, res) {
         db.Diets.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/diets/"})
+                res.render("List", {items:items, url:"/diets/detail/", urladd:"/diets/add", name:"dietas", headers:["ID", "Desayuno", "Comida", "Cena"]})
             })
     },
     detail: function(req,res) {

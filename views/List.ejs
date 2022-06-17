@@ -4,20 +4,125 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">	
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
     <%- include("partials/header.ejs")%>
     <main>
-        <section class="main-items-container">
-            <% for( let i = 0; i < items.length; i++ ) { %>
-                <div class="calves-container"> 
-                    <li>
-                    <a href="<%= url %><%=items[i].id%>"><%= items[i].id %></a>
-                    </li>
+        <section class="main-data-container">
+            <div class="main-data-container-title">
+                <h2>Listado por ID de <%= name %></h2>
+            </div>
+
+            <div class="main-tables--container">
+
+
+                <div class="main-id-value-table">
+                    <p class="items-table--title">Valores</p>
+                    <div class="id-value-table-container">
+                        <table>
+                            <% for( let i = 0; i < items.length; i++ ) { %>
+                                <tr>
+                                <%if (items[i].name && items[i].color) { %>
+                                    <%if (i==0) { %>
+                                        <td class="table__top_left"><%= headers[0] %></td>
+                                        <td class="table__left"> <%= headers[1] %></td>
+                                        <td class="table__right"> <%=  headers[2] %></td>
+                                        <td class="table__top_right table__right"><%=  headers[3]%> </td>
+                                
+                                         <% } else { %>
+                                            <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                            <td class="table__right"> <%= items[i-1].name %></td>
+                                            <td class="table__right"> <%= items[i-1].date_entry %></td>
+                                            <td class="table__right"> <%= items[i-1].date_exit %></td>
+                                         <% } %>
+                                    <% } else if (items[i].breakfast) { %>  
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left"><%= headers[0] %></td>
+                                            <td class="table__left"> <%= headers[1] %></td>
+                                            <td class="table__right"> <%=  headers[2] %></td>
+                                            <td class="table__top_right table__right"><%=  headers[3]%> </td>
+                                    
+                                             <% } else { %>
+                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <td class="table__right"> <%= items[i-1].breakfast %></td>
+                                                <td class="table__right"> <%= items[i-1].eat %></td>
+                                                <td class="table__right"> <%= items[i-1].dinner %></td>
+                                             <% } %>
+                                    <% } else if (items[i].status) { %>    
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left"><%= headers[0] %></td>
+                                            <td class="table__left"> <%= headers[1] %></td>
+                                            <td class="table__right"> <%=  headers[2] %></td>
+                                            <td class="table__right"><%=  headers[3]%> </td>
+                                            <td class="table__right"><%=  headers[4]%> </td>
+                                            <td class="table__top_right table__right"><%=  headers[5]%> </td>
+                                    
+                                             <% } else { %>
+                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <td class="table__right"> <%= items[i-1].calves_id %></td>
+                                                <td class="table__right"> <%= items[i-1].start_date %></td>
+                                                <td class="table__right"> <%= items[i-1].end_date %></td>
+                                                <td class="table__right"> <%= items[i-1].status %></td>
+                                                <td class="table__right"> <%= items[i-1].diets_id %></td>
+                                                
+                                             <% } %>
+                                    <% } else if (items[i].temperature) { %>
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left"><%= headers[0] %></td>
+                                            <td class="table__left"> <%= headers[1] %></td>
+                                            <td class="table__right"> <%=  headers[2] %></td>
+                                            <td class="table__right"><%=  headers[3]%> </td>
+                                            <td class="table__right"><%=  headers[4]%> </td>
+                                            <td class="table__right"><%=  headers[5]%> </td>
+                                            <td class="table__right"><%=  headers[6]%> </td>
+                                            <td class="table__top_right table__right"><%=  headers[7]%> </td>
+                                            <% } else { %>
+                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <td class="table__right"> <%= items[i-1].calves_id %></td>
+                                                <td class="table__right"> <%= items[i-1].temperature %></td>
+                                                <td class="table__right"> <%= items[i-1].respiratory_frequency %></td>
+                                                <td class="table__right"> <%= items[i-1].heart_rate %></td>
+                                                <td class="table__right"> <%= items[i-1].blood_frequency %></td>
+                                                <td class="table__right"> <%= items[i-1].date_analysis %></td>
+                                                
+                                                <td class="table__right"> <%= items[i-1].description %></td>
+                                                
+                                            <% } %>
+                                        
+                                    <% } else if (items[i].name) { %>    
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left"><%= headers[0] %></td>
+                                            <td class="table__left"> <%= headers[1] %></td>
+                                            <td class="table__top_right"> <%=  headers[2] %></td>
+
+                                            <% } else { %>
+                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <td class="table__right"> <%= items[i-1].name %></td>
+                                                <td class="table__right"> <%= items[i-1].created_at %></td>
+                                            <% } %>
+                                    <% } %> 
+                                </tr>
+                                <% } %>
+                        </table>
+                    </div>
                 </div>
-              <% } %>
+            </div>
+            
+            <div class="main-data-add">
+                <a href="<%= urladd %>">Agergar nuevo</a> <i class="material-symbols-outlined">add_circle</i>
+            </div>
         </section>
+
+
+
     </main>
     <%- include("partials/footer.ejs")%>
 

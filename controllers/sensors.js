@@ -6,7 +6,7 @@ let sensorsController = {
     list: function(req, res) {
         db.Sensors.findAll()
         .then(function(items){
-            res.render("List", {items:items,url:"/sensors/"})
+            res.render("List", {items:items,url:"/sensors/detail/", urladd:"/sensors/add",  name:"sensores", headers:["ID",  "ID cría", "Temperatura","Frec. resp.","Frec. card.","Frec. Sanguinea", "Fecha", "Descripción"]})
         })
         
     },   

@@ -5,7 +5,7 @@ let calvesController = {
     list: function(req, res) {
         db.Calves.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/calves/"})
+                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso"]})
             })
     },
     detail: function(req,res) {

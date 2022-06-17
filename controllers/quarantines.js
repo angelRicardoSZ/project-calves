@@ -5,7 +5,7 @@ let dietsController = {
     list: function(req, res) {
         db.Quarantines.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/quarantines/"})
+                res.render("List", {items:items, url:"/quarantines/detail/", urladd:"/quarantines/add",  name:"cuarentenas", headers:["ID", "ID cría", "Fecha inicio", "Fecha fin", "Estado", "ID dieta"]})
             })
     },
     detail: function(req,res) {

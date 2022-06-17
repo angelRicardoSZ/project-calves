@@ -5,7 +5,7 @@ let suppliersController = {
     list: function(req, res) {
         db.Suppliers.findAll()
             .then(function(items){
-                res.render("List", {items:items,url:"/sensors/"})
+                res.render("List", {items:items,url:"/sensors/detail/",urladd:"/suppliers/add",  name:"proveedores", headers:["ID", "Nombre", "Fecha registro"]})
             })
     },
     detail: function(req,res) {
