@@ -5,22 +5,33 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <%- include("partials/header.ejs")%>
+    <b> Mostrar por clasificación japonesa </b>
+    <select id = "myList" onchange = "clasJaponsa()" >
+    <option> --- elige el tipo --- </option>
+    <option value="/calves/TypeI"> Tipo I </option>
+    <option value="/calves/TypeII"> Tipo II </option>
+    </select>
+    
+
     <% for( let i = 0; i < calves.length; i++ ) { %>
       <li>
         <a href="/calves/<%=calves[i].id%>"><%= calves[i].name %></a>
-        <% if(calves[i].Sensor) { %>
-        <p><%=calves[i].Sensor.temperature%></p>
-        <% } %>
-      <!-- <p> ID: <%= calves[i].id %></p>
-      <p> Fecha: <%= calves[i].date_entry %> </p>
-      <p> Peso:  <%= calves[i].weight %> </p>
-      <p> Color: <%= calves[i].color %>  </p>
-      <p> Nombre: <%= calves[i].name %>  </p>
-      <p> Precio: <%= calves[i].price %> $  </p>
-      <p> Descripción: <%= calves[i].description %> </p>
-      <p> Supplier ID: <%= calves[i].supplier_id %> </p> -->
-      
+     
       </li>
     <% } %>
+
+   
+    
+
+
+
+
   </body>
+  <script>
+    function clasJaponsa() {
+    var mylist = document.getElementById("myList");
+    window.location = mylist.options[mylist.selectedIndex].value    
+    }
+    </script>
 </html>

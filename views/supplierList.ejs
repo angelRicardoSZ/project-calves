@@ -4,6 +4,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <%- include("partials/header.ejs")%>
     <% for( let i = 0; i < suppliers.length; i++ ) { %>
       <li>
         <a href="/suppliers/detail/<%=suppliers[i].id%>"><%= suppliers[i].name %></a>

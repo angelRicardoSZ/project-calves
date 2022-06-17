@@ -4,11 +4,18 @@
     
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
+  
+
   <body>
+    <%- include("partials/header.ejs")%>
     <% for( let i = 0; i < calvesTypeI.length; i++ ) { %>
       <li>
         <a href="/calves/<%=calvesTypeI[i].id%>"><%= calvesTypeI[i].name %></a>
       </li>
     <% } %>
+
+
+
   </body>
 </html>

@@ -1,5 +1,6 @@
 <html>
     <body>
+        <%- include("partials/header.ejs")%>
         <h1><%=sensor.id%></h1>
         <form action="/sensors/delete/<%=sensor.id%>?_method=PUT" method="POST"></form>
             <button type="submit">DELETE</button>
