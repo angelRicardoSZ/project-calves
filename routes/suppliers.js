@@ -8,7 +8,7 @@ router.get('/edit/:id',suppliersController.edit)
 router.post('/edit/:id',suppliersController.update)
 router.get('/add',suppliersController.add)
 router.post('/add',suppliersController.create);
-router.get('/delete/:id',suppliersController.deleteForm);
-router.post('/delete/:id',suppliersController.delete);
+// router.get('/delete/:id',suppliersController.deleteForm);
+// router.post('/delete/:id',suppliersController.delete);
 
 module.exports = router;

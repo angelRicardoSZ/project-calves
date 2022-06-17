@@ -1,9 +1,0 @@
-<html>
-    <body>
-        <%- include("partials/header.ejs")%>
-        <h1><%=breeding.name%></h1>
-        <form action="/calves/delete/<%=breeding.id%>?_method=PUT" method="POST"></form>
-            <button type="submit">DELETE</button>
-            <a  class="botonVolver" href="/calves">Listado de crías</a></p>
-    </body>
-</html>

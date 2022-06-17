@@ -4,8 +4,8 @@ let db = require("../database/models");
 let dietsController = {
     list: function(req, res) {
         db.Diets.findAll()
-            .then(function(diets){
-                res.render("dietsList", {diets:diets})
+            .then(function(items){
+                res.render("List", {items:items, url:"/diets/"})
             })
     },
     detail: function(req,res) {
@@ -45,21 +45,21 @@ let dietsController = {
         // console.log(req.body.weight)
         res.redirect("/diets/detail/"+ req.params.id)
     },
-    deleteForm: function(req,res){
-        db.Diets.findByPk(req.params.id)
-            .then(function(diet){
-                res.render("dietsDelete", {diet:diet})
-            })
-    },
-    delete: function(req,res){
-        db.Diets.destroy({
-            where: {
-                id:req.params.id
-            },
-            force: true
-        })
-        res.redirect("/diets")
-    }
+    // deleteForm: function(req,res){
+    //     db.Diets.findByPk(req.params.id)
+    //         .then(function(diet){
+    //             res.render("dietsDelete", {diet:diet})
+    //         })
+    // },
+    // delete: function(req,res){
+    //     db.Diets.destroy({
+    //         where: {
+    //             id:req.params.id
+    //         },
+    //         force: true
+    //     })
+    //     res.redirect("/diets")
+    // }
 }
 
 module.exports = dietsController;

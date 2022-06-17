@@ -8,8 +8,8 @@ router.get('/detail/:id',dietsController.detail);
 router.post('/add',dietsController.create);
 router.get('/edit/:id', dietsController.edit)
 router.post('/edit/:id', dietsController.update)
-router.get('/delete/:id',dietsController.deleteForm)
-router.post('/delete/:id', dietsController.delete)
+// router.get('/delete/:id',dietsController.deleteForm)
+// router.post('/delete/:id', dietsController.delete)
 
 
 

@@ -10,8 +10,8 @@ router.get('/detail/:id',quarantinesController.detail);
 router.post('/add',quarantinesController.create);
 router.get('/edit/:id', quarantinesController.edit)
 router.post('/edit/:id', quarantinesController.update)
-router.get('/delete/:id',quarantinesController.deleteForm)
-router.post('/delete/:id', quarantinesController.delete)
+// router.get('/delete/:id',quarantinesController.deleteForm)
+// router.post('/delete/:id', quarantinesController.delete)
 
 
 

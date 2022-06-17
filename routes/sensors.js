@@ -11,8 +11,8 @@ router.get('/detail/:id', sensorsController.detail)
 router.get('/edit/:id',sensorsController.edit)
 router.post('/edit/:id',sensorsController.update)
 
-router.get('/delete/:id',sensorsController.deleteForm);
-router.post('/delete/:id',sensorsController.delete);
+// router.get('/delete/:id',sensorsController.deleteForm);
+// router.post('/delete/:id',sensorsController.delete);
 
 
 

@@ -4,8 +4,8 @@ let db = require("../database/models");
 let dietsController = {
     list: function(req, res) {
         db.Quarantines.findAll()
-            .then(function(quarantines){
-                res.render("quarantinesList", {quarantines:quarantines})
+            .then(function(items){
+                res.render("List", {items:items, url:"/quarantines/"})
             })
     },
     detail: function(req,res) {
@@ -43,21 +43,21 @@ let dietsController = {
         // console.log(req.body.weight)
         res.redirect("/quarantines/detail/"+ req.params.id)
     },
-    deleteForm: function(req,res){
-        db.Quarantines.findByPk(req.params.id)
-            .then(function(quarantine){
-                res.render("quarantinesDelete", {quarantine:quarantine})
-            })
-    },
-    delete: function(req,res){
-        db.Quarantines.destroy({
-            where: {
-                id:req.params.id
-            },
-            force: true
-        })
-        res.redirect("/quarantines")
-    }
+    // deleteForm: function(req,res){
+    //     db.Quarantines.findByPk(req.params.id)
+    //         .then(function(quarantine){
+    //             res.render("quarantinesDelete", {quarantine:quarantine})
+    //         })
+    // },
+    // delete: function(req,res){
+    //     db.Quarantines.destroy({
+    //         where: {
+    //             id:req.params.id
+    //         },
+    //         force: true
+    //     })
+    //     res.redirect("/quarantines")
+    // }
 }
 
 module.exports = dietsController;

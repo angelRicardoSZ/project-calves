@@ -4,8 +4,8 @@ let db = require("../database/models");
 let calvesController = {
     list: function(req, res) {
         db.Calves.findAll()
-            .then(function(calves){
-                res.render("calvesList", {calves:calves})
+            .then(function(items){
+                res.render("List", {items:items, url:"/calves/"})
             })
     },
     detail: function(req,res) {
@@ -114,26 +114,26 @@ let calvesController = {
             }
         })
         // console.log(req.body.weight)
-        res.redirect("/calves/"+ req.params.id)
+        res.redirect("/calves/detail"+ req.params.id)
     },
-    deleteForm: function(req,res){
-        console.log(req.params.id)
-        db.Calves.findByPk(req.params.id)
-            .then(function(breeding){
-                res.render("calvesDelete", {breeding:breeding})
-            })
-    },
-    delete: function(req,res){
-        console.log("delete")
-        console.log(req.params.id)
-        db.Calves.destroy({
-            where: {
-                id:req.params.id
-            },
-            force: true
-        })
-        res.redirect("/calves")
-    }
+    // deleteForm: function(req,res){
+    //     console.log(req.params.id)
+    //     db.Calves.findByPk(req.params.id)
+    //         .then(function(breeding){
+    //             res.render("calvesDelete", {breeding:breeding})
+    //         })
+    // },
+    // delete: function(req,res){
+    //     console.log("delete")
+    //     console.log(req.params.id)
+    //     db.Calves.destroy({
+    //         where: {
+    //             id:req.params.id
+    //         },
+    //         force: true
+    //     })
+    //     res.redirect("/calves")
+    // }
 }
 
 module.exports = calvesController;

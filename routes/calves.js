@@ -9,12 +9,12 @@ router.get('/',calvesController.list);
 router.get('/TypeI', calvesController.filter1);
 router.get('/TypeII', calvesController.filter2 );
 
-router.get('/:id',calvesController.detail);
+router.get('/detail/:id',calvesController.detail);
 router.post('/add',calvesController.create);
 router.get('/edit/:id', calvesController.edit)
 router.post('/edit/:id', calvesController.update)
-router.get('/delete/:id',calvesController.deleteForm)
-router.post('/delete/:id', calvesController.delete)
+// router.get('/delete/:id',calvesController.deleteForm)
+// router.post('/delete/:id', calvesController.delete)
 
 
 

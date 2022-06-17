@@ -5,13 +5,13 @@ let db = require("../database/models");
 let sensorsController = {
     list: function(req, res) {
         db.Sensors.findAll()
-        .then(function(sensors){
-            res.render("sensorsList", {sensors:sensors})
+        .then(function(items){
+            res.render("List", {items:items,url:"/sensors/"})
         })
         
     },   
     add: function(req,res){
-        res.render("sensorRegister", )
+        res.render("sensorRegister")
         
     },
     create: function(req, res) {
@@ -68,24 +68,24 @@ let sensorsController = {
         // console.log(req.body.weight)
         res.redirect("/sensors/detail/"+ req.params.id)
     },
-    deleteForm: function(req,res){
-        db.Sensors.findByPk(req.params.id)
-            .then(function(sensor){
-                res.render("sensorsDelete", {sensor:sensor})
-            })
+    // deleteForm: function(req,res){
+    //     db.Sensors.findByPk(req.params.id)
+    //         .then(function(sensor){
+    //             res.render("sensorsDelete", {sensor:sensor})
+    //         })
         
-    },
-    delete: function(req,res){
+    // },
+    // delete: function(req,res){
     
         
-        db.Sensors.destroy({
-            where: {
-                id:req.params.id
-            },
-            force: true
-        })
-        res.redirect("/sensors")
-    }
+    //     db.Sensors.destroy({
+    //         where: {
+    //             id:req.params.id
+    //         },
+    //         force: true
+    //     })
+    //     res.redirect("/sensors")
+    // }
 }
 
 module.exports = sensorsController;
