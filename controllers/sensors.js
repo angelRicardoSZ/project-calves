@@ -15,7 +15,7 @@ let sensorsController = {
         
     },
     create: function(req, res) {
-        db.sensors.create({
+        db.Sensors.create({
             id: req.body.id,
             temperature: req.body.temperature,
             respiratory_frequency:req.body.respiratory_frequency,            
@@ -25,6 +25,42 @@ let sensorsController = {
         });
         res.redirect("/sensors")
         
+    },
+    
+    filter1: function(req,res){
+        db.Sensors.findAll({
+            where: {                
+                [Op.and] : [
+                    {
+                        temperature:{
+                            [Op.gt]: 39.5,
+        
+                        }
+                    },
+                    {
+                        respiratory_frequency:{
+                            [Op.notBetween] : [15,20]
+                        }
+                    },
+                    {
+                        heart_rate:{
+                            [Op.notBetween] : [70,80]
+                        }
+                    },
+                    {
+                        blood_frequency:{
+                            [Op.gt] : 10
+                        } 
+                    }
+                ]
+                
+                
+                
+            }
+        })
+        .then(function(items){
+            res.render("List", {items:items,url:"/sensors/detail/", urladd:"/quarantines/add",  name:"datos de sensores de crías por enfermar", headers:["ID",  "ID cría", "Temperatura","Frec. resp.","Frec. card.","Frec. Sanguinea", "Fecha", "Descripción"]})
+        })
     },
     // detail: function(req,res) {
     //     db.Sensors.findByPk(req.params.id)

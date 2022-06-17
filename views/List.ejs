@@ -219,6 +219,38 @@
                                                 <td class="table__right"> <%= items[i-1].supplier_id %></td>
                                                 <td class="table__right"> <%= items[i-1].description %></td>
                                              <% } %>
+                                    
+
+                                    <%} else if (items[i].name && items[i].temperature > 39.5 && items[i].heart_rate < 70 || items[i].heart_rate > 70 && items[i].respiratory_frequency < 15 || items[i].respiratory_frequency > 20 && items[i].blood_frequency> 10) { %>
+                                        
+
+
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__right table__header"> <%=  headers[2] %></td>
+                                            <td class="table__right table__header"><%=  headers[3]%> </td>
+                                            <td class="table__right table__header"><%=  headers[4]%> </td>
+                                            <td class="table__right table__header"><%=  headers[5]%> </td>
+                                            <td class="table__right table__header"><%=  headers[6]%> </td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[7]%> </td>
+                                        <% } else { %>
+                                            <td class="table__left"> <%= items[i-1].id %></td>
+                                            <td class="table__right"> <%= items[i-1].calves_id %></td>
+                                            <td class="table__right"> <%= items[i-1].temperature %></td>
+                                            <td class="table__right"> <%= items[i-1].respiratory_frequency %></td>
+                                            <td class="table__right"> <%= items[i-1].heart_rate %></td>
+                                            <td class="table__right"> <%= items[i-1].blood_frequency %></td>
+                                            <td class="table__right"> <%= items[i-1].date_analysis %></td>
+                                            <td class="table__right"> <%= items[i-1].description %></td>
+                                        <% } %>
+
+
+
+
+
+
+
                                     <% } else  { %> 
                                         <p>No hay coincidencias</p>
                                     <% } %> 
