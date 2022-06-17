@@ -5,7 +5,7 @@ let dietsController = {
     list: function(req, res) {
         db.Diets.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/diets/detail/", urladd:"/diets/add", name:"dietas", headers:["ID", "Desayuno", "Comida", "Cena"]})
+                res.render("List", {items:items, url:"/diets/detail/", urladd:"/diets/add",urledit:"/diets/edit/", name:"dietas", headers:["ID", "Desayuno", "Comida", "Cena", "Editar"]})
             })
     },
     // detail: function(req,res) {
@@ -43,7 +43,7 @@ let dietsController = {
             }
         })
         // console.log(req.body.weight)
-        res.redirect("/diets/detail/"+ req.params.id)
+        res.redirect("/diets/")
     },
     // deleteForm: function(req,res){
     //     db.Diets.findByPk(req.params.id)

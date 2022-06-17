@@ -5,7 +5,7 @@ let calvesController = {
     list: function(req, res) {
         db.Calves.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
+                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add",urledit:"/calves/edit/", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción", "Editar"]})
             })
     },
     // detail: function(req,res) {
@@ -43,7 +43,7 @@ let calvesController = {
             .then(function(items){
                 //console.log(calvesTypeI)
                 // res.render("calvesTypeI", {calvesTypeI:calvesTypeI})
-                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
+                res.render("List", {items:items, url:"/calves/detail/", urledit:"/calves/edit/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
             })
     },
     filter2: function(req, res) {
@@ -74,7 +74,7 @@ let calvesController = {
         })
         .then(function(items){
                   
-                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
+                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add",urledit:"/calves/edit/", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción","Editar"]})
             })
     },
     add: function(req,res){
@@ -115,7 +115,7 @@ let calvesController = {
             }
         })
         // console.log(req.body.weight)
-        res.redirect("/calves/detail"+ req.params.id)
+        res.redirect("/calves/")
     },
     // deleteForm: function(req,res){
     //     console.log(req.params.id)

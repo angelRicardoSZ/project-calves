@@ -6,7 +6,7 @@ let sensorsController = {
     list: function(req, res) {
         db.Sensors.findAll()
         .then(function(items){
-            res.render("List", {items:items,url:"/sensors/detail/", urladd:"/sensors/add",  name:"sensores", headers:["ID",  "ID cría", "Temperatura","Frec. resp.","Frec. card.","Frec. Sanguinea", "Fecha", "Descripción"]})
+            res.render("List", {items:items,url:"/sensors/detail/", urladd:"/sensors/add",urledit:"/sensors/edit/",  name:"sensores", headers:["ID",  "ID cría", "Temperatura","Frec. resp.","Frec. card.","Frec. Sanguinea", "Fecha", "Descripción"]})
         })
         
     },   
@@ -59,7 +59,7 @@ let sensorsController = {
             }
         })
         .then(function(items){
-            res.render("List", {items:items,url:"/sensors/detail/", urladd:"/quarantines/add",  name:"datos de sensores de crías por enfermar", headers:["ID",  "ID cría", "Temperatura","Frec. resp.","Frec. card.","Frec. Sanguinea", "Fecha", "Descripción"]})
+            res.render("List", {items:items,url:"/sensors/detail/", urladd:"/quarantines/add",urledit:"/sensors/edit/",  name:"datos de sensores de crías por enfermar", headers:["ID",  "ID cría", "Temperatura","Frec. resp.","Frec. card.","Frec. Sanguinea", "Fecha", "Descripción", "Editar"]})
         })
     },
     // detail: function(req,res) {
@@ -102,7 +102,7 @@ let sensorsController = {
             }
         })
         // console.log(req.body.weight)
-        res.redirect("/sensors/detail/"+ req.params.id)
+        res.redirect("/sensors/")
     },
     // deleteForm: function(req,res){
     //     db.Sensors.findByPk(req.params.id)

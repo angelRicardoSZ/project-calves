@@ -5,7 +5,7 @@ let dietsController = {
     list: function(req, res) {
         db.Quarantines.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/quarantines/detail/", urladd:"/quarantines/add",  name:"cuarentenas", headers:["ID", "ID cría", "Fecha inicio", "Fecha fin", "Estado", "ID dieta"]})
+                res.render("List", {items:items, url:"/quarantines/detail/", urladd:"/quarantines/add", urledit:"/quarantines/edit/",  name:"cuarentenas", headers:["ID", "ID cría", "Fecha inicio", "Fecha fin", "Estado", "ID dieta",  "Editar"]})
             })
     },
     // detail: function(req,res) {
@@ -41,7 +41,7 @@ let dietsController = {
             }
         })
         // console.log(req.body.weight)
-        res.redirect("/quarantines/detail/"+ req.params.id)
+        res.redirect("/quarantines/")
     },
     // deleteForm: function(req,res){
     //     db.Quarantines.findByPk(req.params.id)

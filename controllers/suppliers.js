@@ -5,7 +5,7 @@ let suppliersController = {
     list: function(req, res) {
         db.Suppliers.findAll()
             .then(function(items){
-                res.render("List", {items:items,url:"/sensors/detail/",urladd:"/suppliers/add",  name:"proveedores", headers:["ID", "Nombre", "Fecha registro"]})
+                res.render("List", {items:items,url:"/sensors/detail/",urladd:"/suppliers/add",urledit:"/suppliers/edit/",  name:"proveedores", headers:["ID", "Nombre", "Fecha registro", "Edit"]})
             })
     },
     // detail: function(req,res) {
@@ -40,7 +40,7 @@ let suppliersController = {
             }
         })
         // console.log(req.body.weight)
-        res.redirect("/suppliers/detail/"+ req.params.id)
+        res.redirect("/suppliers/")
     },
     // deleteForm: function(req,res){
     //     console.log(req.params.id)
