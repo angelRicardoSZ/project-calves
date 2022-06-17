@@ -8,12 +8,12 @@ let dietsController = {
                 res.render("List", {items:items, url:"/quarantines/detail/", urladd:"/quarantines/add",  name:"cuarentenas", headers:["ID", "ID cría", "Fecha inicio", "Fecha fin", "Estado", "ID dieta"]})
             })
     },
-    detail: function(req,res) {
-        db.Quarantines.findByPk(req.params.id)
-            .then(function(quarantine){
-                res.render("quarantinesDetail", {quarantine:quarantine})
-            })
-    },
+    // detail: function(req,res) {
+    //     db.Quarantines.findByPk(req.params.id)
+    //         .then(function(quarantine){
+    //             res.render("quarantinesDetail", {quarantine:quarantine})
+    //         })
+    // },
     add: function(req,res){
         res.render("quarantinesRegister")
     },

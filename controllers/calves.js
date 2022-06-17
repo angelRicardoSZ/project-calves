@@ -5,15 +5,15 @@ let calvesController = {
     list: function(req, res) {
         db.Calves.findAll()
             .then(function(items){
-                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso"]})
+                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
             })
     },
-    detail: function(req,res) {
-        db.Calves.findByPk(req.params.id)
-            .then(function(Breeding){
-                res.render("calvesDetail", {Breeding:Breeding})
-            })
-    },
+    // detail: function(req,res) {
+    //     db.Calves.findByPk(req.params.id)
+    //         .then(function(Breeding){
+    //             res.render("calvesDetail", {Breeding:Breeding})
+    //         })
+    // },
     filter1: function(req,res){
         db.Calves.findAll({
             where: {                
@@ -40,9 +40,10 @@ let calvesController = {
                 
             }
         })
-            .then(function(calvesTypeI){
+            .then(function(items){
                 //console.log(calvesTypeI)
-                res.render("calvesTypeI", {calvesTypeI:calvesTypeI})
+                // res.render("calvesTypeI", {calvesTypeI:calvesTypeI})
+                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
             })
     },
     filter2: function(req, res) {
@@ -71,9 +72,9 @@ let calvesController = {
                 
             }
         })
-            .then(function(calvesTypeII){
+        .then(function(items){
                   
-                res.render("calvesTypeII", {calvesTypeII:calvesTypeII})
+                res.render("List", {items:items, url:"/calves/detail/", urladd:"/calves/add", name:"crías", headers:["ID", "Nombre", "Fecha ingreso", "Fecha egreso", "Color", "Marmoleo", "Peso", "ID proveedor", "descripción"]})
             })
     },
     add: function(req,res){

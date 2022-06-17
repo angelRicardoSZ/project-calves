@@ -6,7 +6,7 @@ router.get('/add',quarantinesController.add);
 router.get('/',quarantinesController.list);
 
 
-router.get('/detail/:id',quarantinesController.detail);
+//router.get('/detail/:id',quarantinesController.detail);
 router.post('/add',quarantinesController.create);
 router.get('/edit/:id', quarantinesController.edit)
 router.post('/edit/:id', quarantinesController.update)

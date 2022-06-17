@@ -30,43 +30,82 @@
                         <table>
                             <% for( let i = 0; i < items.length; i++ ) { %>
                                 <tr>
-                                <%if (items[i].name && items[i].color) { %>
+                                <%if (items[i].name && items[i].marmoleo == 1 || items[i].marmoleo == 2 || items[i].marmoleo == 3 || items[i].marmoleo== 4 || items[i].marmoleo == 5 ) { %>
                                     <%if (i==0) { %>
-                                        <td class="table__top_left"><%= headers[0] %></td>
-                                        <td class="table__left"> <%= headers[1] %></td>
-                                        <td class="table__right"> <%=  headers[2] %></td>
-                                        <td class="table__top_right table__right"><%=  headers[3]%> </td>
+                                        <td class="table__top_left table__header"><%= headers[0] %></td>
+                                        <td class="table__left table__header"> <%= headers[1] %></td>
+                                        <td class="table__right table__header"> <%=  headers[2] %></td>
+                                        <td class="table__right table__header"><%=  headers[3]%> </td>
+                                        <td class="table__right table__header"><%=  headers[4]%> </td>
+                                        <td class="table__right table__header"><%=  headers[5]%> </td>
+                                        <td class="table__right table__header"><%=  headers[6]%> </td>
+                                        <td class="table__right table__header"><%=  headers[7]%> </td>
+                                        <td class="table__top_right table__right table__header"><%=  headers[8]%> </td>
+
+
                                 
                                          <% } else { %>
-                                            <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                            <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                            
+                                            <td class="table__left"> <%= items[i-1].id %></td>
                                             <td class="table__right"> <%= items[i-1].name %></td>
                                             <td class="table__right"> <%= items[i-1].date_entry %></td>
                                             <td class="table__right"> <%= items[i-1].date_exit %></td>
+                                            <td class="table__right"> <%= items[i-1].color %></td>
+                                            <td class="table__right"> <%= items[i-1].marmoleo %></td>
+                                            <td class="table__right"> <%= items[i-1].weight %></td>
+                                            <td class="table__right"> <%= items[i-1].supplier_id %></td>
+                                            <td class="table__right"> <%= items[i-1].description %></td>
+                                            <!-- <%if (items[i-1].sensors) { %>
+                                                <td class="table__left"> <%= items[i-1].id %></td>
+                                                <td class="table__right"> <%= items[i-1].name %></td>
+                                                <td class="table__right"> <%= items[i-1].date_entry %></td>
+                                                <td class="table__right"> <%= items[i-1].date_exit %></td>
+                                                <td class="table__right"> <%= items[i-1].color %></td>
+                                                <td class="table__right"> <%= items[i-1].marmoleo %></td>
+                                                <td class="table__right"> <%= items[i-1].weight %></td>
+                                                <td class="table__right"> <%= items[i-1].supplier_id %></td>
+                                                <td class="table__right"> <%= items[i-1].sensors %></td>
+                                            <% } else { %>
+                                                <td class="table__left"> <%= items[i-1].id %></td>
+                                                <td class="table__right"> <%= items[i-1].name %></td>
+                                                <td class="table__right"> <%= items[i-1].date_entry %></td>
+                                                <td class="table__right"> <%= items[i-1].date_exit %></td>
+                                                <td class="table__right"> <%= items[i-1].color %></td>
+                                                <td class="table__right"> <%= items[i-1].marmoleo %></td>
+                                                <td class="table__right"> <%= items[i-1].weight %></td>
+                                                <td class="table__right"> <%= items[i-1].supplier_id %></td>
+                                                <td class="table__right"> <%= items[i-1].description %></td>
+                                            <% } %>    -->
+
+
                                          <% } %>
                                     <% } else if (items[i].breakfast) { %>  
                                         <%if (i==0) { %>
-                                            <td class="table__top_left"><%= headers[0] %></td>
-                                            <td class="table__left"> <%= headers[1] %></td>
-                                            <td class="table__right"> <%=  headers[2] %></td>
-                                            <td class="table__top_right table__right"><%=  headers[3]%> </td>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__right table__header"> <%=  headers[2] %></td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[3]%> </td>
                                     
                                              <% } else { %>
-                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                                <td class="table__left"> <%= items[i-1].id %></td>
                                                 <td class="table__right"> <%= items[i-1].breakfast %></td>
                                                 <td class="table__right"> <%= items[i-1].eat %></td>
                                                 <td class="table__right"> <%= items[i-1].dinner %></td>
                                              <% } %>
                                     <% } else if (items[i].status) { %>    
                                         <%if (i==0) { %>
-                                            <td class="table__top_left"><%= headers[0] %></td>
-                                            <td class="table__left"> <%= headers[1] %></td>
-                                            <td class="table__right"> <%=  headers[2] %></td>
-                                            <td class="table__right"><%=  headers[3]%> </td>
-                                            <td class="table__right"><%=  headers[4]%> </td>
-                                            <td class="table__top_right table__right"><%=  headers[5]%> </td>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__right table__header"> <%=  headers[2] %></td>
+                                            <td class="table__right table__header"><%=  headers[3]%> </td>
+                                            <td class="table__right table__header"><%=  headers[4]%> </td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[5]%> </td>
                                     
                                              <% } else { %>
-                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                                <td class="table__left"><%= items[i-1].id %></td>
                                                 <td class="table__right"> <%= items[i-1].calves_id %></td>
                                                 <td class="table__right"> <%= items[i-1].start_date %></td>
                                                 <td class="table__right"> <%= items[i-1].end_date %></td>
@@ -76,38 +115,112 @@
                                              <% } %>
                                     <% } else if (items[i].temperature) { %>
                                         <%if (i==0) { %>
-                                            <td class="table__top_left"><%= headers[0] %></td>
-                                            <td class="table__left"> <%= headers[1] %></td>
-                                            <td class="table__right"> <%=  headers[2] %></td>
-                                            <td class="table__right"><%=  headers[3]%> </td>
-                                            <td class="table__right"><%=  headers[4]%> </td>
-                                            <td class="table__right"><%=  headers[5]%> </td>
-                                            <td class="table__right"><%=  headers[6]%> </td>
-                                            <td class="table__top_right table__right"><%=  headers[7]%> </td>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__right table__header"> <%=  headers[2] %></td>
+                                            <td class="table__right table__header"><%=  headers[3]%> </td>
+                                            <td class="table__right table__header"><%=  headers[4]%> </td>
+                                            <td class="table__right table__header"><%=  headers[5]%> </td>
+                                            <td class="table__right table__header"><%=  headers[6]%> </td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[7]%> </td>
                                             <% } else { %>
-                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <td class="table__left"> <%= items[i-1].id %></td>
                                                 <td class="table__right"> <%= items[i-1].calves_id %></td>
                                                 <td class="table__right"> <%= items[i-1].temperature %></td>
                                                 <td class="table__right"> <%= items[i-1].respiratory_frequency %></td>
                                                 <td class="table__right"> <%= items[i-1].heart_rate %></td>
                                                 <td class="table__right"> <%= items[i-1].blood_frequency %></td>
                                                 <td class="table__right"> <%= items[i-1].date_analysis %></td>
-                                                
                                                 <td class="table__right"> <%= items[i-1].description %></td>
-                                                
+                                                <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                                <!-- <% if(items[i-1].calves) { %>
+                                                    <td class="table__left"> <%= items[i-1].calves.name %></td>
+                                                    <td class="table__right"> <%= items[i-1].calves_id %></td>
+                                                    <td class="table__right"> <%= items[i-1].temperature %></td>
+                                                    <td class="table__right"> <%= items[i-1].respiratory_frequency %></td>
+                                                    <td class="table__right"> <%= items[i-1].heart_rate %></td>
+                                                    <td class="table__right"> <%= items[i-1].blood_frequency %></td>
+                                                    <td class="table__right"> <%= items[i-1].date_analysis %></td>
+                                                    
+                                                    <td class="table__right"> <%= items[i-1].description %></td>
+                                                <% } else { %>
+                                                    <td class="table__left"> <%= items[i-1].id %></td>
+                                                    <td class="table__right"> <%= items[i-1].calves_id %></td>
+                                                    <td class="table__right"> <%= items[i-1].temperature %></td>
+                                                    <td class="table__right"> <%= items[i-1].respiratory_frequency %></td>
+                                                    <td class="table__right"> <%= items[i-1].heart_rate %></td>
+                                                    <td class="table__right"> <%= items[i-1].blood_frequency %></td>
+                                                    <td class="table__right"> <%= items[i-1].date_analysis %></td>
+                                                    
+                                                    <td class="table__right"> <%= items[i-1].description %></td>
+                                                <% } %> -->
                                             <% } %>
                                         
                                     <% } else if (items[i].name) { %>    
                                         <%if (i==0) { %>
-                                            <td class="table__top_left"><%= headers[0] %></td>
-                                            <td class="table__left"> <%= headers[1] %></td>
-                                            <td class="table__top_right"> <%=  headers[2] %></td>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__top_right table__header"> <%=  headers[2] %></td>
 
                                             <% } else { %>
-                                                <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td>
+                                                <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                                <td class="table__left"> <%= items[i-1].id %></td>
                                                 <td class="table__right"> <%= items[i-1].name %></td>
                                                 <td class="table__right"> <%= items[i-1].created_at %></td>
                                             <% } %>
+                                    <%} else if (items[i].name && items[i].marmoleo == 1 || items[i].marmoleo == 2 ) { %>
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__right table__header"> <%=  headers[2] %></td>
+                                            <td class="table__right table__header"><%=  headers[3]%> </td>
+                                            <td class="table__right table__header"><%=  headers[4]%> </td>
+                                            <td class="table__right table__header"><%=  headers[5]%> </td>
+                                            <td class="table__right table__header"><%=  headers[6]%> </td>
+                                            <td class="table__right table__header"><%=  headers[7]%> </td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[8]%> </td>
+    
+    
+                                    
+                                            <% } else { %>
+                                                <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                                <td class="table__left"> <%= items[i-1].id %></td>
+                                                <td class="table__right"> <%= items[i-1].name %></td>
+                                                <td class="table__right"> <%= items[i-1].date_entry %></td>
+                                                <td class="table__right"> <%= items[i-1].date_exit %></td>
+                                                <td class="table__right"> <%= items[i-1].color %></td>
+                                                <td class="table__right"> <%= items[i-1].marmoleo %></td>
+                                                <td class="table__right"> <%= items[i-1].weight %></td>
+                                                <td class="table__right"> <%= items[i-1].supplier_id %></td>
+                                                <td class="table__right"> <%= items[i-1].description %></td>
+                                            <% } %>
+                                    <%} else if (items[i].name && items[i].marmoleo == 3 || items[i].marmoleo == 4 || items[i].marmoleo == 5 ) { %>
+                                        <%if (i==0) { %>
+                                            <td class="table__top_left table__header"><%= headers[0] %></td>
+                                            <td class="table__left table__header"> <%= headers[1] %></td>
+                                            <td class="table__right table__header"> <%=  headers[2] %></td>
+                                            <td class="table__right table__header"><%=  headers[3]%> </td>
+                                            <td class="table__right table__header"><%=  headers[4]%> </td>
+                                            <td class="table__right table__header"><%=  headers[5]%> </td>
+                                            <td class="table__right table__header"><%=  headers[6]%> </td>
+                                            <td class="table__right table__header"><%=  headers[7]%> </td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[8]%> </td>
+                                            <td class="table__top_right table__right table__header"><%=  headers[8]%> </td>
+
+                                            <% } else { %>
+                                                <!-- <td class="table__left"> <a href="<%= url %><%=items[i-1].id%>"><%= items[i-1].id %></a></td> -->
+                                                <td class="table__left"> <%= items[i-1].id %></td>
+                                                <td class="table__right"> <%= items[i-1].name %></td>
+                                                <td class="table__right"> <%= items[i-1].date_entry %></td>
+                                                <td class="table__right"> <%= items[i-1].date_exit %></td>
+                                                <td class="table__right"> <%= items[i-1].color %></td>
+                                                <td class="table__right"> <%= items[i-1].marmoleo %></td>
+                                                <td class="table__right"> <%= items[i-1].weight %></td>
+                                                <td class="table__right"> <%= items[i-1].supplier_id %></td>
+                                                <td class="table__right"> <%= items[i-1].description %></td>
+                                             <% } %>
+                                    <% } else  { %> 
+                                        <p>No hay coincidencias</p>
                                     <% } %> 
                                 </tr>
                                 <% } %>

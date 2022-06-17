@@ -41,7 +41,11 @@ module.exports = (sequelize,dataTypes) => {
     const Sensor = sequelize.define(alias, cols, config);
     
     // Sensor.associate = function(models) {
-    //     Sensor.belongsTo(models.Calve )
+    //     Sensor.belongsTo(models.Calves, {
+    //         as:"Calves",
+    //         foreign_key:"calves_id"
+    //     } )
+        
     // }
 
     return Sensor

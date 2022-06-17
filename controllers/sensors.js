@@ -26,12 +26,12 @@ let sensorsController = {
         res.redirect("/sensors")
         
     },
-    detail: function(req,res) {
-        db.Sensors.findByPk(req.params.id)
-            .then(function(sensor){
-                res.render("sensorsDetail", {sensor:sensor})
-            })
-    },
+    // detail: function(req,res) {
+    //     db.Sensors.findByPk(req.params.id)
+    //         .then(function(sensor){
+    //             res.render("sensorsDetail", {sensor:sensor})
+    //         })
+    // },
     add: function(req,res){
         res.render("sensorsRegister")
     },

@@ -7,7 +7,7 @@ router.get('/',sensorsController.list);
 router.get('/add',sensorsController.add)
 router.post('/add',sensorsController.create);
 
-router.get('/detail/:id', sensorsController.detail)
+//router.get('/detail/:id', sensorsController.detail)
 router.get('/edit/:id',sensorsController.edit)
 router.post('/edit/:id',sensorsController.update)
 

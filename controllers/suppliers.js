@@ -8,12 +8,12 @@ let suppliersController = {
                 res.render("List", {items:items,url:"/sensors/detail/",urladd:"/suppliers/add",  name:"proveedores", headers:["ID", "Nombre", "Fecha registro"]})
             })
     },
-    detail: function(req,res) {
-        db.Suppliers.findByPk(req.params.id)
-            .then(function(supplier){
-                res.render("supplierDetail", {supplier:supplier})
-            })
-    },
+    // detail: function(req,res) {
+    //     db.Suppliers.findByPk(req.params.id)
+    //         .then(function(supplier){
+    //             res.render("supplierDetail", {supplier:supplier})
+    //         })
+    // },
     add: function(req,res){
         res.render("supplierRegister")
     },

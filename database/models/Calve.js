@@ -44,10 +44,10 @@ module.exports = (sequelize,dataTypes) => {
     const Calve = sequelize.define(alias, cols, config);
     
     // Calve.associate = function(models) {
-    //     Calve.hasMany(models.Sensor, {
+    //     Calve.hasMany(models.Sensors, {
             
     //         as:"Sensor",
-    //         // foreign_key:"calves_id"
+    //         foreign_key:"calves_id"
 
     //     })
     // }

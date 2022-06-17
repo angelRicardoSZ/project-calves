@@ -14,9 +14,16 @@
     <div class="header--title-container">
         <h1>Corrales terneros</h1>
         <p>Administra la crianza de tus terneros de manera efectivo</p>
-        <a href="#todosLosItems" class="header--button">
+        <!-- <a href="#todosLosItems" class="header--button">
             Todos los registros <span></span>
-        </a>
+        </a> -->
+
+        <select id = "myList" onchange = "clasJaponsa()" class="header--button" >
+            <option> --- elige el tipo --- </option>
+            <option value="/calves/TypeI"> Tipo I </option>
+            <option value="/calves/TypeII"> Tipo II </option>
+        </select>
+            
     </div>
     <nav class="header--nav-container">
         <ul>
@@ -28,4 +35,11 @@
             
         </ul>
     </nav>
+
+    <script>
+        function clasJaponsa() {
+        var mylist = document.getElementById("myList");
+        window.location = mylist.options[mylist.selectedIndex].value    
+        }
+        </script>
 </header>

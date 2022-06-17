@@ -215,7 +215,7 @@ color: var(--soft-orange);
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.9rem;
-  color: var(--grey);
+  color:#757575;
   background-color: var(--just-white);
 }
 
@@ -228,6 +228,13 @@ color: var(--soft-orange);
 }
 
 
+.id-value-table-container .table__header {
+  font-size:1.6rem ;
+  font-weight: normal;
+  line-height: 1.7rem;
+  color: var(--grey);
+
+}
 .id-value-table-container .table__top_left{
   border-radius: 15px 0 0 0;
 }

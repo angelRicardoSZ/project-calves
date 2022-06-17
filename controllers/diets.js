@@ -8,12 +8,12 @@ let dietsController = {
                 res.render("List", {items:items, url:"/diets/detail/", urladd:"/diets/add", name:"dietas", headers:["ID", "Desayuno", "Comida", "Cena"]})
             })
     },
-    detail: function(req,res) {
-        db.Diets.findByPk(req.params.id)
-            .then(function(diet){
-                res.render("dietsDetail", {diet:diet})
-            })
-    },
+    // detail: function(req,res) {
+    //     db.Diets.findByPk(req.params.id)
+    //         .then(function(diet){
+    //             res.render("dietsDetail", {diet:diet})
+    //         })
+    // },
     add: function(req,res){
         res.render("dietsRegister")
     },
